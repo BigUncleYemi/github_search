@@ -1,0 +1,23 @@
+li{
+    color: white;
+    list-style-type: none;
+}
+li:hover{
+    color: black;
+}
+p{
+    color:black;
+}
+.result{
+    max-height: 300px;
+    overflow-y: scroll;
+}
+.back{
+    display: flex;
+    height: 40px;
+    font-size: 14px;
+    background-color: white;
+}
+.back:hover{
+    background-color: rgb(169, 169, 169);
+}
