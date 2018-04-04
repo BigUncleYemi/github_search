@@ -8,12 +8,8 @@ export default class Search extends Component {
     }
 
     createSearch(event) {
+        console.log(event)
         event.preventDefault();
-        console.log('GOnna make some signature! 🎣');
-        const Search = event.target.value;
-        this
-            .props
-            .getTask(Search);
     }
 
     handleChange(e) {
@@ -49,7 +45,7 @@ export default class Search extends Component {
                     </div>
                     <ul className="collapse navbar-collapse navbar-ex1-collapse">
                         <li>
-                            <form className="navbar-form navbar-right">
+                            <form className="navbar-form navbar-right" onSubmit={this.createSearch}>
                                 <div className="form-group">
                                     <input
                                         type="search"
