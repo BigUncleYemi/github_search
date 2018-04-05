@@ -28,44 +28,27 @@ class App extends Component {
   }
 
   getResult(Search) {
-    this.setState({search: Search})
     console.log('heroku')
+    console.log(Search)
+    this.setState({search: Search})
     axios
       .get('https://api.github.com/users/' + this.state.search)
       .then(response => this.setState({git: response.data}))
-      .catch(error => {
-        if (error.response) {
-          console.log(error.response);
-        }
-      });
     axios
       .get('https://api.github.com/users/' + this.state.search + '/repos')
       .then(response => this.setState({repos: response.data}))
-      .catch(error => {
-        if (error.response) {
-          console.log(error.response);
-        }
-      });
   }
 
-  getTask(Search) {
+  getTask(e) {
+    console.log(e)
     console.log('hero')
     axios
       .get('https://api.github.com/users/' + this.state.search)
       .then(response => this.setState({git: response.data}))
-      .catch(error => {
-        if (error.response) {
-          console.log(error.response);
-        }
-      });
+      
     axios
       .get('https://api.github.com/users/' + this.state.search + '/repos')
       .then(response => this.setState({repos: response.data}))
-      .catch(error => {
-        if (error.response) {
-          console.log(error.response);
-        }
-      });
   }
 
   handleChange(Search) {

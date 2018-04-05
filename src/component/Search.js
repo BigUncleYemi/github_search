@@ -17,10 +17,10 @@ export default class Search extends Component {
         const Search = e.target.value;
         this.props.handleChange(Search);
     }
-    getResult(login){
-        console.log(login) 
-        const Search = login;
-        this.props.getTask(Search);
+    getResult(e, login){
+        console.log(e) 
+        const Search = e;
+        this.props.getResult(Search);
     }
     render() {
         const {
@@ -65,7 +65,7 @@ export default class Search extends Component {
                             <li className="dropdown">
                                 <a className="dropdown-toggle" data-toggle="dropdown">Results<b className="caret"></b></a>
                                 <ul className="dropdown-menu result">
-                                    {items.map(({id, login, avatar_url}) => <li key={id} onClick={this.getResult(login)} className='back'><img src={avatar_url} alt={login} height='38px' width='40px'/><p>{login}</p>
+                                    {items.map(({id, login, avatar_url}) => <li key={id} onClick={(e) => this.getResult(login)} className='back'><img src={avatar_url} alt={login} height='38px' width='40px'/><p>{login}</p>
                                     </li>)}
                                 </ul>
                             </li>
